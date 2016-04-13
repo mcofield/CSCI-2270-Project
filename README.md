@@ -1,4 +1,4 @@
-# CSCI-2270-Project
+# CSCI-2270-Project, Oscar, Joey, Ryan
 Text-Based interactive dungeon game
 "left path" or "right path" based adventure
 will be implemented using a binary search tree
