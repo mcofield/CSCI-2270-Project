@@ -101,7 +101,7 @@ int main(){
 			
 		}
 		
-		
+		adventureTree.printCurrentTask();
 		cout<<"1. Attempt the task"<<endl;
 		cout<<"2. Avoid the task"<<endl;
 		cout<<"3. Change weapon"<<endl;
