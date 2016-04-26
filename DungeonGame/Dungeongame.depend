@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1461658369 source:c:\users\oscar\dropbox\data structure\assignments\dungeongame\main.cpp
+	"control.h"
+	<string>
+	<iostream>
+
+1461615626 source:c:\users\oscar\dropbox\data structure\assignments\dungeongame\src\control.cpp
+	"control.h"
+
+1461660940 c:\users\oscar\dropbox\data structure\assignments\dungeongame\include\control.h
+	<string>
+	<vector>
+

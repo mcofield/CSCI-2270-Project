@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1461662211 source:c:\users\oscar\dropbox\data structure\assignments\adventuretime\main.cpp
+	"control.h"
+	<string>
+	<iostream>
+
+1461662291 c:\users\oscar\dropbox\data structure\assignments\adventuretime\include\control.h
+	<string>
+	<vector>
+
+1461662286 source:c:\users\oscar\dropbox\data structure\assignments\adventuretime\src\control.cpp
+	"control.h"
+	<string>
+	<iostream>
+
