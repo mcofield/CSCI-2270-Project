@@ -1,82 +1,163 @@
 #include "control.h"
-#include <string>
-#include <iostream>
+#include "iostream"
+#include "string"
+#include "stdlib.h"
 
 control::control()
 {
     //ctor
+    for(int i = 0; i < 16; i++){
+        choices[i] = 0;
+    }
+    root = NULL;
+    x = 0;
 }
 
-void control::buildTreeEasy()
+control::~control()
 {
-
+    //dtor
 }
 
-void control::buildTreeMedium()
-{
 
-}
-
-void control::buildTreeHard()
-{
-
-}
-void control::createPlayer(playerNode player1)
-{
-    int w;
-    string n;
-    cout<<"Welcome: "<<endl;
-    cin>>n;
-    cout<<"You are about to start a adventure, please choose a weapon."<<endl;
-    cout<<""<<endl;
-    cin>>w;
-    player1.name=n;
-    player1.weapon=w;
-    player1.points=0;
-    player1.health=100;
-}
-
-void control::printPlayerPath()
-{
+void control::buildTreeEasy(){
+    difficulty = 1;
 
 }
 
-void control::printBestPath()
-{
+
+void control::buildTreeMedium(){
+    difficulty = 2;
 
 }
 
-void control::traverseTree(TreeNode *root, int command)
-{
+
+void control::buildTreeHard(){
+    difficulty = 3;
+
+}
+
+
+void control::createPlayer(){
+
+    player1.health = 100;
+    cout<<"What would you like your hero to be named?"<<endl;
+    cin>>player1.name;
+    player1.points = 0;
+    player1.weapon = 0;
+
+}
+
+
+void control::printPlayerPath(){
+
+}
+
+
+void control::printBestPath(){
+
+}
+
+
+void control::traverseTree(int command){
+
     if (command==1)
     {
         root=root->right;
+        choices[x] = 1;
     }
     if (command==2)
     {
         root=root->left;
+        choices[x] = 2;
     }
-}
 
-void control::checkStats(playerNode player1)
-{
-    cout<<player1.name<<" Health: "<<player1.health<<" Points: "<<player1.points<<" weapon: "<<player1.weapon<<endl;
-}
+    x++;
 
-void control::changeWeapon(int weaponKey)
-{
 
 }
 
-void control::recoverHealth()
-{
+
+void control::checkStats(){
+
+    cout<<"Health: "<<player1.health<<endl;
+    cout<<"Points: "<<player1.points<<endl;
+    cout<<"Currently wielding: ";
+    if(player1.weapon == 0){
+        cout<<"Fists"<<endl;
+    }
+    if(player1.weapon == 1){
+        cout<<"Sword"<<endl;
+    }
+    if(player1.weapon == 2){
+        cout<<"Gun"<<endl;
+    }
+    if(player1.weapon == 3){
+        cout<<"Axe"<<endl;
+    }
 
 }
 
-void control::restart()
-{
+
+void control::changeWeapon(){
+
+    if(player1.weapon == 0){
+        cout<<"You are currently wielding Fists"<<endl;
+        cout<<"Input 1 for a Sword, 2 for a Gun, 3 for an Axe, or 0 to keep Fists: "<<endl;
+        cin>>player1.weapon;
+        cin.clear();
+    }
+    else if(player1.weapon == 1){
+        cout<<"You are currently wielding a Sword"<<endl;
+        cout<<"Input 0 for Fists, 2 for a Gun, 3 for an Axe, or 1 to keep Sword: "<<endl;
+        cin>>player1.weapon;
+        cin.clear();
+    }
+    else if(player1.weapon == 2){
+        cout<<"You are currently wielding a Gun"<<endl;
+        cout<<"Input 0 for a Fists, 1 for a Sword, 3 for an Axe, or 2 to keep a Gun: "<<endl;
+        cin>>player1.weapon;
+        cin.clear();
+    }
+    else if(player1.weapon == 3){
+        cout<<"You are currently wielding an Axe"<<endl;
+        cout<<"Input 0 for a Fists, 1 for a Sword, 2 for a Gun, or 3 to keep Axe: "<<endl;
+        cin>>player1.weapon;
+        cin.clear();
+    }
 
 }
+
+
+void control::recoverHealth(){
+
+    int healthGain = 0;
+    healthGain = rand() % 20;
+    if(player1.health+healthGain > 100){
+        cout<<"By going around you have recovered "<<100-player1.health<<" and are now back to full health!"<<endl;
+        player1.health = 100;
+    }else{
+
+        cout<<"By going around you have recovered "<<healthGain<<endl;
+        player1.health += healthGain;
+        cout<<"You now have "<<player1.health<<" health."<<endl;
+
+
+    }
+
+}
+
+
+//void restart();
+
+
+
+void control::printCurrentTask(){
+
+
+
+}
+
+
 
 void control::story(int num)
 {
@@ -154,9 +235,4 @@ void control::story(int num)
     {
         cout<<"A dragon fly's in out of no where and is now attacking the village, go right to protect the village, go left to run away"<<endl;
     }
-}
-
-control::~control()
-{
-    //dtor
 }
