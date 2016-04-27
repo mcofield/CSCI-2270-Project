@@ -1,5 +1,6 @@
 #ifndef CONTROL_H
-#define CONTROL_
+#define CONTROL_H
+
 #include <string>
 #include <vector>
 
@@ -15,7 +16,7 @@ struct playerNode{
 struct TreeNode{
     TreeNode *left;
     TreeNode *right;
-    //TreeNode *root;
+    TreeNode *root;
     int key;
 };
 
@@ -27,20 +28,27 @@ class control
         void buildTreeEasy();
         void buildTreeMedium();
         void buildTreeHard();
-        void createPlayer(playerNode player1);
+        void createPlayer();
         void printPlayerPath();
         void printBestPath();
-        void traverseTree(TreeNode *root, int command);
-        void checkStats(playerNode player1);
-        void changeWeapon(int weaponKey);
+        void traverseTree(int command);
+        void checkStats();
+        void changeWeapon();
         void recoverHealth();
-        void restart();
         void story(int num);
+        //void restart();
+        void printCurrentTask();//Restart might be messy for the game flow, plus we don't have any function that deals with traversing the current task. Just a thought.
+        playerNode player1;
+        int choices[16];
 
     protected:
     private:
         void modifyStats();
         bool beatDragon();
+        TreeNode *root;
+        int x;
+        //TreeNode *player;
+        int difficulty;
 
 };
 
