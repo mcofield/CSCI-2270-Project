@@ -49,6 +49,21 @@ void control::createPlayer(){
 
 
 void control::printPlayerPath(){
+    counter = 0;
+    TreeNode *tmp = root;
+    cout<<"The first step of your journey was: "<<story[0]<<endl;
+    while(tmp->left != NULL){
+        if(choices[counter] == 1){
+            tmp = tmp->right;
+            cout<<"You chose to fight! Your next step was: "<<story(tmp->key)<<endl;
+        }else{
+            tmp = tmp->left;
+            cout<<"You chose to avoid it. Your next step was: "<<story(tmp->key)<<endl;
+        }
+
+
+        }
+
 
 }
 
