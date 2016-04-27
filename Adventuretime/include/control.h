@@ -16,7 +16,6 @@ struct playerNode{
 struct TreeNode{
     TreeNode *left;
     TreeNode *right;
-    TreeNode *root;
     int key;
 };
 
@@ -25,9 +24,9 @@ class control
     public:
         control();
         virtual ~control();
-        void buildTreeEasy();
-        void buildTreeMedium();
-        void buildTreeHard();
+        void buildTreeEasy(int inKey);
+        void buildTreeMedium(int inKey);
+        void buildTreeHard(int Key);
         void createPlayer();
         void printPlayerPath();
         void printBestPath();
@@ -35,20 +34,16 @@ class control
         void checkStats();
         void changeWeapon();
         void recoverHealth();
-        void story(int num);
-        //void restart();
-        void printCurrentTask();//Restart might be messy for the game flow, plus we don't have any function that deals with traversing the current task. Just a thought.
+        void story(int inKey);
         playerNode player1;
         int choices[16];
+        TreeNode *player;
+        void fightCost();
 
     protected:
     private:
-        void modifyStats();
-        bool beatDragon();
         TreeNode *root;
         int x;
-        //TreeNode *player;
-        int difficulty;
 
 };
 
