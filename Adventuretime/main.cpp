@@ -109,6 +109,8 @@ int createPlayer=0;
 
 	cout<<"Welcome to Hero Journey. Please enter '1' to create player:"<<endl;
 	cin>>createPlayer;
+	cin.clear();
+    while (cin.get() != '\n');
     adventureTree.createPlayer();
     cout << "" <<endl;
 	help();
@@ -130,7 +132,16 @@ while(stillRunning==true && adventureTree.player!=NULL){
 	cout<<"4. Status Check"<<endl;
 	cout<<"5. Help"<<endl;
 	cout<<"6. Quit"<<endl;
+	task = 0;
+	if(!cin>>task ||task > 6 || task <0){
+        cout << "Not a valid input.  Please input the number next to the menu item you wish to select" << endl;
+        cin.clear();
+        while (cin.get() != '\n') ;
+	}
+	else{
 	cin>>task;
+	}
+
 
 
 
