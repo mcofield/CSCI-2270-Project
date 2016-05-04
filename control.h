@@ -16,7 +16,6 @@ struct playerNode{
 struct TreeNode{
     TreeNode *left;
     TreeNode *right;
-    TreeNode *root;
     int key;
 };
 
@@ -25,22 +24,26 @@ class control
     public:
         control();
         virtual ~control();
-        void buildTreeEasy();
-        void buildTreeMedium();
-        void buildTreeHard();
+        void buildTreeEasy(int inKey);
+        void buildTreeMedium(int inKey);
+        void buildTreeHard(int Key);
         void createPlayer();
         void printPlayerPath();
         void printBestPath();
         void traverseTree(int command);
         void checkStats();
-        void changeWeapon(int weaponKey);
+        void changeWeapon();
         void recoverHealth();
-        void restart();
+        void story(int inKey);
+        playerNode player1;
+        int choices[16];
+        TreeNode *player;
+        void fightCost(string difficulty, int task);
 
     protected:
     private:
-        void modifyStats();
-        bool beatDragon();
+        TreeNode *root;
+        int x;
 
 };
 

@@ -10,158 +10,252 @@ void help(){
 //=======
 
 //>>>>>>> origin/master
-	cout<< "The goal of this game is to get to your home while achieving the highest amount of points possible. "<<endl;
-	cout<< "Depending on the difficutly you chose your path home may be more rigorous. "<<endl;
-	cout<< "In every adventure you will be given various tasks to complete, all of which have an easy option and a hard option. "<<endl;
-	cout<< "If you take the easy way on any given task, you will not lose any health when completing the task but will not gain any points. "<<endl;
-//<<<<<<< HEAD
-	cout<< "Each instance will be a yes or no choice as to whether or not you'd like to attempt the task, and points/health will be updated accordingly. "<<endl;
-	cout<< "At any point in the game you may stop to check the status of your character, change the weapon they are weilding, and much more as represented by the main menu. "<<endl;
-//=======
-	cout<< "Each task will give you a choice of as to whether or not you'd like to attempt the task, and points/health will be updated accordingly. "<<endl;
-	cout<< "At any point in the game you may stop to check the status of your character, change the weapon they are weilding, and much more as represented by the main menu. "<<endl;
-	cout<< "That is all the information i have for your, this help window is always available under the Help tab in the main menu. "<<endl;
-//>>>>>>> origin/master
+	cout<< "The goal of this game is to navigate the realm while achieving the highest" << endl;
+	cout << "amount of points possible."<<endl;
+	cout<< "In every adventure you will be given various tasks to complete." << endl;
+	cout << "You can either attempt or avoid each task"<<endl;
+	cout << "If you attempt a task, you will gain points but lose health" << endl;
+	cout << "If you avoid a task, you will not gain points but lose health" << endl;
+	cout << "If you avoid a task in absurd mode, you will not gain points, but will still"<<endl;
+	cout << "lose half the health you would have lost if you had attempted the task" << endl;
+	cout<< "That is all the information I have for you." <<endl;
 	cout<< "Good luck hero, and have fun!"<<endl;
+	cout <<"" <<endl;
 }
 
 
 int main(){
 //<<<<<<< HEAD
+int createPlayer=0;
 
 //=======
 
 //>>>>>>> origin/master
 	string difficulty;
-	cout<<"Before the game starts, pick if you'll be playing easy(e), medium(m), or hard(h) difficulty. Note that a harder difficulty will reward more points:"<<endl;
-	cin>>difficulty;
-	cin.clear();
+	cout<<"Before the game starts, pick if you'll be playing: " << endl;
+	cout << "easy(e)" << endl;
+	cout << "medium(m)" << endl;
+	cout << "hard(h)" << endl;
+	cout << "absurd(a)"<<endl;
+	cout << "Note that a harder difficulty will reward more points." << endl;
+	cout << "please enter 'e', 'm', 'h', 'a' to select difficulty: "<<endl;
+	getline(cin,difficulty);
 
-	while(difficulty != "e" && difficulty != "m" && difficulty != "h"){
+	while(difficulty != "e" && difficulty != "m" && difficulty != "h" && difficulty != "a"){
         cout<<"I'm sorry that isn't a valid input."<<endl;
-        cout<<"pick if you'll be playing easy(e), medium(m), or hard(h) difficulty."<<endl;
-        cin>>difficulty;
-        cin.clear();
+        cout<<"pick if you'll be playing easy(e), medium(m), hard(h), or absurd (a) difficulty."<<endl;
+        getline(cin,difficulty);
 	}
 
 	control adventureTree;
 	if(difficulty == "e"){
-		adventureTree.buildTreeEasy();
+		adventureTree.buildTreeEasy(100);
+		adventureTree.buildTreeEasy(50);
+		adventureTree.buildTreeEasy(20);
+		adventureTree.buildTreeEasy(80);
+		adventureTree.buildTreeEasy(150);
+		adventureTree.buildTreeEasy(120);
+		adventureTree.buildTreeEasy(180);
 	}
 	if(difficulty == "m"){
-		adventureTree.buildTreeMedium();
+		adventureTree.buildTreeMedium(100);
+		adventureTree.buildTreeMedium(50);
+		adventureTree.buildTreeMedium(20);
+		adventureTree.buildTreeMedium(80);
+		adventureTree.buildTreeMedium(150);
+		adventureTree.buildTreeMedium(120);
+		adventureTree.buildTreeMedium(180);
+		adventureTree.buildTreeMedium(10);
+		adventureTree.buildTreeMedium(30);
+		adventureTree.buildTreeMedium(70);
+		adventureTree.buildTreeMedium(90);
+		adventureTree.buildTreeMedium(110);
+		adventureTree.buildTreeMedium(130);
+		adventureTree.buildTreeMedium(170);
+		adventureTree.buildTreeMedium(190);
 	}
 	if(difficulty == "h"){
-		adventureTree.buildTreeHard();
+		adventureTree.buildTreeHard(100);
+		adventureTree.buildTreeHard(50);
+		adventureTree.buildTreeHard(20);
+		adventureTree.buildTreeHard(80);
+		adventureTree.buildTreeHard(150);
+		adventureTree.buildTreeHard(120);
+		adventureTree.buildTreeHard(180);
+		adventureTree.buildTreeHard(10);
+		adventureTree.buildTreeHard(30);
+		adventureTree.buildTreeHard(70);
+		adventureTree.buildTreeHard(90);
+		adventureTree.buildTreeHard(110);
+		adventureTree.buildTreeHard(130);
+		adventureTree.buildTreeHard(170);
+		adventureTree.buildTreeHard(190);
+		adventureTree.buildTreeHard(5);
+		adventureTree.buildTreeHard(15);
+		adventureTree.buildTreeHard(25);
+		adventureTree.buildTreeHard(35);
+		adventureTree.buildTreeHard(65);
+		adventureTree.buildTreeHard(75);
+		adventureTree.buildTreeHard(85);
+		adventureTree.buildTreeHard(95);
+		adventureTree.buildTreeHard(105);
+		adventureTree.buildTreeHard(115);
+		adventureTree.buildTreeHard(125);
+		adventureTree.buildTreeHard(135);
+        adventureTree.buildTreeHard(165);
+        adventureTree.buildTreeHard(175);
+        adventureTree.buildTreeHard(185);
+        adventureTree.buildTreeHard(195);
 	}
+	if(difficulty == "a"){
+		adventureTree.buildTreeHard(100);
+		adventureTree.buildTreeHard(50);
+		adventureTree.buildTreeHard(20);
+		adventureTree.buildTreeHard(80);
+		adventureTree.buildTreeHard(150);
+		adventureTree.buildTreeHard(120);
+		adventureTree.buildTreeHard(180);
+		adventureTree.buildTreeHard(10);
+		adventureTree.buildTreeHard(30);
+		adventureTree.buildTreeHard(70);
+		adventureTree.buildTreeHard(90);
+		adventureTree.buildTreeHard(110);
+		adventureTree.buildTreeHard(130);
+		adventureTree.buildTreeHard(170);
+		adventureTree.buildTreeHard(190);
+		adventureTree.buildTreeHard(5);
+		adventureTree.buildTreeHard(15);
+		adventureTree.buildTreeHard(25);
+		adventureTree.buildTreeHard(35);
+		adventureTree.buildTreeHard(65);
+		adventureTree.buildTreeHard(75);
+		adventureTree.buildTreeHard(85);
+		adventureTree.buildTreeHard(95);
+		adventureTree.buildTreeHard(105);
+		adventureTree.buildTreeHard(115);
+		adventureTree.buildTreeHard(125);
+		adventureTree.buildTreeHard(135);
+        adventureTree.buildTreeHard(165);
+        adventureTree.buildTreeHard(175);
+        adventureTree.buildTreeHard(185);
+        adventureTree.buildTreeHard(195);
+	}
+	string input = "";
+	cout<<"Welcome to Hero Journey. Please enter '1' to create player:"<<endl;
+	getline(cin,input);
+	//cout << input << endl;
 
-	adventureTree.createPlayer();
-
-	cout<<"Welcome to Hero Journey"<<endl;
+	while (input!="1")
+	{
+		cout << "Please enter '1' to create player:"<<endl;
+		getline(cin,input);
+	}
+	//cin>>createPlayer;
+	//cin.clear();
+    //while (cin.get() != '\n');
+    adventureTree.createPlayer();
+    cout << "" <<endl;
 	help();
 //<<<<<<< HEAD
 
 
 
 //=======
-	int task = 0;
+bool stillRunning =true;
+int task = 0;
 
-	adventureTree.printCurrentTask();
-	cout<<"1. Attempt the task"<<endl;
-	cout<<"2. Avoid the task"<<endl;
+while(stillRunning==true && adventureTree.player!=NULL){
+
+    adventureTree.story(adventureTree.player->key);
+    cout << "" << endl;
+	cout<<"1. Avoid the task"<<endl;
+	cout<<"2. Attempt the task"<<endl;
 	cout<<"3. Change weapon"<<endl; //we should list of which weapons you have, and possible weapons swaps, with the option to keep the weapon you're holding. So you always have a way to check without changing it.
 	cout<<"4. Status Check"<<endl;
 	cout<<"5. Help"<<endl;
 	cout<<"6. Quit"<<endl;
+	task = 0;
+	if(!cin>>task ||task > 6 || task <0){
+        cout << "Not a valid input.  Please input the number next to the menu item you wish to select" << endl;
+        cin.clear();
+        while (cin.get() != '\n') ;
+	}
+	else{
 	cin>>task;
-
-	//These are all the menu options i could think of, if you guys think of anymore it'd be super easy to add them.
-
+	}
 
 
-	while(task!=6){
 
 
-		if(task == 1){
+switch (task){
+		case 1:
+            adventureTree.traverseTree(task);
+            if(difficulty!="a")
+                adventureTree.recoverHealth();
+            else
+                adventureTree.fightCost(difficulty,task);
+            break;
+		case 2:
+            adventureTree.traverseTree(task);
+            adventureTree.fightCost(difficulty,task);
+            if(adventureTree.player1.health<0){
+                cout << "You died because you lost all health! Good try!" << endl;
+                stillRunning=false;
+            }
+            break;
 
-			//really not sure what I'm supposed to do here. once the functions and trees are built it'll be more clear
-
-		}
-
-		if(task == 2){
-
-
-			//same as above
-			adventureTree.recoverHealth();
-
-		}
-
-		if(task == 3){
-
+		case 3:
 			adventureTree.changeWeapon();
+            break;
 
-		}
-
-		if(task == 4){
-
+		case 4:
 			adventureTree.checkStats();
+            break;
 
-		}
-
-		if(task == 5){
-
+		case 5:
 			help();
+			break;
 
-		}
+		case 6:
+            stillRunning =false;
+            break;
+}
 
-		adventureTree.printCurrentTask();
-		cout<<"1. Attempt the task"<<endl;
-		cout<<"2. Avoid the task"<<endl;
-		cout<<"3. Change weapon"<<endl;
-		cout<<"4. Status Check"<<endl;
-		cout<<"5. Help"<<endl;
-		cout<<"6. Quit"<<endl;
-		cin>>task;
-		cin.clear();
+}
 
-	}
-
-	//We could also put a final status report in the destructor, but it's here just for now.
-
-	cout<<"Thank you for playing! If you'd like to see how you did here are some options:"<<endl;
+bool stillRunning2 = true;
+int task2=0;
+while(stillRunning2==true){
+    cout << "" <<endl;
+	cout<<"Thank you for playing " << adventureTree.player1.name << "! If you'd like to see how you did here are some options:"<<endl;
 	cout<<"1. See character path"<<endl;
 	cout<<"2. See best path"<<endl;
 	cout<<"3. Check final points/health"<<endl;
 	cout<<"4. Close game"<<endl;
-	int task2;
 	cin>>task2;
 	cin.clear();
 
-	while(task2 !=4){
+	switch(task2){
 
-		if(task2 == 1){
+		case 1:
 			adventureTree.printPlayerPath();
-		}
+			break;
 
-		if(task2 == 2){
-			adventureTree.printBestPath();
-		}
+        case 2:
+            adventureTree.printBestPath();
+            break;
 
-		if(task2 == 3){
-			adventureTree.checkStats();
-		}
+        case 3:
+            adventureTree.checkStats();
+            break;
 
+		case 4:
+            cout << "Thanks for playing Goodbye!" << endl;
+            stillRunning2=false;
+            break;
+        }
 
-	cout<<"1. See character path"<<endl;
-	cout<<"2. See best path"<<endl;
-	cout<<"3. Check final points/health"<<endl;
-	cout<<"4. Close game"<<endl;
-	cin>>task2;
-	cin.clear();
-	}
-//>>>>>>> origin/master
-
-
+    }
 
 	return 0;
 }
