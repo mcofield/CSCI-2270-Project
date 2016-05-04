@@ -36,14 +36,12 @@ int createPlayer=0;
 	cout << "hard(h)" << endl;
 	cout << "Note that a harder difficulty will reward more points." << endl;
 	cout << "please enter 'e', 'm', or 'h' to select difficulty: "<<endl;
-	cin>>difficulty;
-	cin.clear();
+	getline(cin,difficulty);
 
 	while(difficulty != "e" && difficulty != "m" && difficulty != "h"){
         cout<<"I'm sorry that isn't a valid input."<<endl;
         cout<<"pick if you'll be playing easy(e), medium(m), or hard(h) difficulty."<<endl;
-        cin>>difficulty;
-        cin.clear();
+        getline(cin,difficulty);
 	}
 
 	control adventureTree;
@@ -106,11 +104,19 @@ int createPlayer=0;
         adventureTree.buildTreeHard(185);
         adventureTree.buildTreeHard(195);
 	}
-
+	string input = "";
 	cout<<"Welcome to Hero Journey. Please enter '1' to create player:"<<endl;
-	cin>>createPlayer;
-	cin.clear();
-    while (cin.get() != '\n');
+	getline(cin,input);
+	//cout << input << endl;
+
+	while (input!="1")
+	{
+		cout << "Please enter '1' to create player:"<<endl;
+		getline(cin,input);
+	}	
+	//cin>>createPlayer;
+	//cin.clear();
+    //while (cin.get() != '\n');
     adventureTree.createPlayer();
     cout << "" <<endl;
 	help();
@@ -183,7 +189,7 @@ bool stillRunning2 = true;
 int task2=0;
 while(stillRunning2==true){
     cout << "" <<endl;
-	cout<<"Thank you for playing! If you'd like to see how you did here are some options:"<<endl;
+	cout<<"Thank you for playing " << adventureTree.player1.name << "! If you'd like to see how you did here are some options:"<<endl;
 	cout<<"1. See character path"<<endl;
 	cout<<"2. See best path"<<endl;
 	cout<<"3. Check final points/health"<<endl;

@@ -3,6 +3,8 @@
 #include "string"
 #include "stdlib.h"
 
+#include <time.h>
+
 control::control()
 {
     //ctor
@@ -150,7 +152,7 @@ void control::createPlayer(){
 
     player1.health = 100;
     cout<<"What would you like your hero to be named?"<<endl;
-    cin>>player1.name;
+    getline(cin,player1.name);
     player1.points = 0;
     player1.weapon = 0;
 
@@ -293,6 +295,8 @@ void control::changeWeapon(){
 
 void control::recoverHealth(){
 
+    srand(rand()^time(NULL)); //seed the random number generator with number that will change
+
     int healthGain = 0;
     healthGain = rand() % 20;
     if(player1.health+healthGain > 100){
@@ -310,6 +314,9 @@ void control::recoverHealth(){
 }
 
 void control::fightCost(){
+
+srand(rand()^time(NULL)); //seed the random number generator with number that will change with runtime
+
 int healthLost=0;
 healthLost=rand() % 50 +1;
 player1.health=player1.health - healthLost;
